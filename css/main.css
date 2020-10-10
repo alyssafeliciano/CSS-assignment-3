@@ -8,22 +8,23 @@ html {
     box-sizing: inherit; /* keep */
 }
 body {
-    font-family: sans-serif;
+    font-family: 'Open Sans','helvetica',sans-serif;
     background: #5598b2; /* keep */
     color: #333; /* keep */
     margin: 0; /* keep */
 }
 h1, h2 {
-    font-family: serif;
+    font-family: 'Roboto Slab','times',serif;
 }
 #tagline {
     font-style: italic;
 }
 /* all images will stretch to fill their containing element */
 img {
-    display: block; /* keep */
+    display: block;/* keep */
     width: 100%; /* keep */
 }
+
 
 /* In the grid container below, you will change the columns,
     the rows, and the AREAS to layout the page as instructed
@@ -38,10 +39,15 @@ img {
     margin: auto; /* keep */
     display: grid; /* keep */
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(6, auto);
     grid-template-areas:
-        "header arial georgia pairing bobwhite-quail"
-        "readability line-length helvetica typeface footer";
+        "header header header header header"
+        "pairing pairing pairing arial georgia"
+        "bobwhite-quail bobwhite-quail readability readability readability"
+        "bobwhite-quail bobwhite-quail line-length line-length line-length"
+        "typeface typeface typeface helvetica helvetica"
+        "typeface typeface typeface . ."
+        "footer footer footer footer footer";
 }
 
 /* all grid items -
@@ -53,43 +59,73 @@ img {
 header {
     grid-area: header; /* keep */
     background: #fff; /* keep */
+    text-align: center;
+    font-size: 1.5em;
 }
+
 #arial {
     grid-area: arial; /* keep */
     background: #a8e8ff; /* keep */
+    padding: 5px 10px;
+    padding-top: 40px;
 }
 #georgia {
     grid-area: georgia; /* keep */
     background: #a8e8ff; /* keep */
+    padding: 5px 10px;
+    padding-top: 40px;
 }
 #pairing {
     grid-area: pairing; /* keep */
     background: #a8e8ff; /* keep */
+    margin: 0;
+    padding: 40px 80px;
+    font-size: 1.5em;
+    line-height: 1.25em;
+
 }
 #bobwhite-quail {
     grid-area: bobwhite-quail; /* keep */
     background: #d2f4ff; /* keep */
+    padding: 20px 40px;
+    padding-top: 80px;
+    padding-bottom: 40px;
 }
 #readability {
     grid-area: readability; /* keep */
     background: #d2f4ff; /* keep */
+    padding-right: 80px;
+    padding-top: 55px;
+    font-size: 1em;
+
+
 }
 #line-length {
     grid-area: line-length; /* keep */
     background: #d2f4ff; /* keep */
+    padding-right: 80px;
+    font-size: 1em;
 }
 #helvetica {
     grid-area: helvetica; /* keep */
     background: #fff; /* keep */
+    margin:45px;
+    padding: 20px 40px;
 }
 #typeface {
     grid-area: typeface; /* keep */
     color: #d2f4ff; /* keep */
     background: #5598b2; /* keep */
+    padding: 20px 40px;
+    font-size: 1.25em;
+    text-shadow:.05em .05em .05em #C0C0C0;
+
 }
 footer {
     grid-area: footer; /* keep */
     background: #b2988a; /* keep */
+    text-align: center;
+    font-size: 1.35em;
 }
 
 /* end of all 10 grid items */
@@ -105,3 +141,75 @@ a:hover {
 }
 
 /* media queries below - only 1 is needed */
+@media screen and (max-width: 700px) {
+  #container{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(10, auto);
+    grid-template-areas:
+        "header"
+        "header"
+        "arial georgia"
+        "pairing pairing"
+        "bobwhite-quail bobwhite-quail"
+        "readability readability"
+        "line-length line-length"
+        "helvetica helvetica"
+        "typeface typeface"
+        "typface typface"
+        "footer footer";
+}
+}
+
+/* all grid items -
+    these are the 10 direct children of the container
+    - all the grid items are here already!
+    You may add lines as needed. Do not change any line marked -keep-
+    */
+
+header {
+
+}
+
+header img{
+  display:none;
+}
+
+
+#arial {
+
+}
+#georgia {
+
+}
+#pairing {
+  padding: 10px;
+
+
+}
+#bobwhite-quail {
+  padding:10px;
+
+}
+#readability {
+  padding:20px;
+
+
+
+}
+#line-length {
+  padding: 20px;
+
+}
+#helvetica {
+  margin:0;
+
+}
+#typeface {
+  padding:10px;
+
+
+}
+footer {
+text-align: left;
+padding: 20px;
+  }
